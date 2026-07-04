@@ -1,0 +1,181 @@
+<!-- ═══════ HERO ═══════ -->
+<app-hero-banner
+  eyebrow="Women Travel & Investment Community"
+  title="The Queens of Adventure"
+  subtitle="A royal sisterhood of fearless African women - exploring Tanzania and the world, boldly and together."
+  imageUrl="https://images.unsplash.com/photo-1574236170878-84f3a96e75a3?w=1920&q=90"
+  ctaLabel="Explore Our Tours"
+  ctaLink="/tours"
+  ctaLabel2="Join the Sisterhood"
+  ctaLink2="/contact">
+</app-hero-banner>
+
+<!-- ═══════ STATS ═══════ -->
+<div class="stats-bar">
+  <div class="stats-bar__inner">
+    <div class="stat"><div class="stat__num">500+</div><div class="stat__label">Queens Worldwide</div></div>
+    <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Destinations</div></div>
+    <div class="stat"><div class="stat__num">50+</div><div class="stat__label">Group Trips</div></div>
+    <div class="stat"><div class="stat__num">100%</div><div class="stat__label">Women-Led</div></div>
+  </div>
+</div>
+
+<!-- ═══════ ABOUT TEASER ═══════ -->
+<section class="section section--ivory">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-split__images" [scrollReveal]="0">
+        <div class="img-collage">
+          <img class="img-collage__main"
+            src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&q=85"
+            alt="African women on safari" loading="lazy"/>
+          <img class="img-collage__secondary"
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=85"
+            alt="Women empowerment" loading="lazy"/>
+          <div class="img-collage__badge">
+            <span class="img-collage__badge-num">2020</span>
+            <span class="img-collage__badge-text">Founded in<br>Dar es Salaam</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-split__text" [scrollReveal]="150">
+        <span class="eyebrow">Who We Are</span>
+        <h2>A Royal Sisterhood of Adventurous, Bold & Fearless Women</h2>
+        <p>Tanzania Safari Queens is a vibrant, inclusive community for women of all backgrounds, races, and cultures who love Adventure, Connecting, and exploring the beauty of Tanzania and beyond.</p>
+        <p>Here, we <strong>share, inspire, empower,</strong> and <strong>explore</strong> - from the heart of Tanzania to the world. Whether you're chasing dreams, discovering new places, growing a business, shaping your career, or finding your voice - <em>you belong here.</em></p>
+        <blockquote class="about-quote">
+          "We believe that adventure &amp; success is better together."
+        </blockquote>
+        <div class="about-split__actions">
+          <a routerLink="/about"   class="btn btn--gold">Our Story</a>
+          <a routerLink="/contact" class="btn btn--outline-dark">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHOTO MOMENTS GRID ═══════ -->
+<section class="moments-section">
+  <div class="moments-grid">
+    <div class="moment-tile" *ngFor="let m of moments; let i=index" [scrollReveal]="i*50">
+      <img [src]="m.img" [alt]="m.label" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80'"/>
+      <div class="moment-tile__label">{{m.label}}</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DESTINATIONS ═══════ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head text-center" [scrollReveal]="0">
+      <span class="eyebrow">Where We Go</span>
+      <h2>Iconic Destinations</h2>
+      <p class="section-head__sub">From the Serengeti plains to Zanzibar's shores - our Queens roam the entire continent and beyond.</p>
+    </div>
+    <div class="dest-grid">
+      <app-destination-card *ngFor="let d of destinations; let i=index"
+        [destination]="d" [scrollReveal]="i*70">
+      </app-destination-card>
+    </div>
+    <div class="text-center" style="margin-top:3rem">
+      <a routerLink="/destinations" class="btn btn--gold btn--lg">All Destinations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FEATURED TOURS ═══════ -->
+<section class="section section--parch">
+  <div class="container">
+    <div class="section-head text-center" [scrollReveal]="0">
+      <span class="eyebrow">Curated Experiences</span>
+      <h2>Featured Tours & Safaris</h2>
+      <p class="section-head__sub">Handpicked adventures with expert guides, safety guaranteed, memories forever.</p>
+    </div>
+    <div class="grid-3">
+      <app-tour-card *ngFor="let t of featuredTours; let i=index"
+        [tour]="t" [scrollReveal]="i*80">
+      </app-tour-card>
+    </div>
+    <div class="text-center" style="margin-top:3rem">
+      <a routerLink="/tours" class="btn btn--dark btn--lg">Browse All Tours →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CORE VALUES ═══════ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head text-center" [scrollReveal]="0">
+      <span class="eyebrow eyebrow--light">What We Stand For</span>
+      <h2>Our Core Values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let v of values; let i=index" [scrollReveal]="i*70">
+        <span class="value-card__icon">{{v.icon}}</span>
+        <h4>{{v.title}}</h4>
+        <p>{{v.desc}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EXPERIENCE BANNER ═══════ -->
+<section class="exp-banner">
+  <div class="exp-banner__img-side">
+    <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=900&q=85"
+         alt="African women enjoying adventure" loading="lazy"/>
+  </div>
+  <div class="exp-banner__text-side" [scrollReveal]="0">
+    <span class="eyebrow">The TSQ Experience</span>
+    <h2>More Than Just a Trip - It's a Transformation</h2>
+    <p>Every journey with Tanzania Safari Queens is designed to push boundaries, forge lifelong friendships, and create memories that outlast the trip itself.</p>
+    <ul class="exp-list">
+      <li>Expert female-friendly guides &amp; local hosts</li>
+      <li>Small groups (max 20) for intimate experiences</li>
+      <li>Financial literacy &amp; investment workshops</li>
+      <li>Certified safe travel practices</li>
+      <li>Exclusive members-only events &amp; soirées</li>
+    </ul>
+    <a routerLink="/tours" class="btn btn--gold btn--lg" style="margin-top:1.5rem">Start Your Journey</a>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<section class="section section--ivory">
+  <div class="container">
+    <div class="section-head text-center" [scrollReveal]="0">
+      <span class="eyebrow">What Our Queens Say</span>
+      <h2>Stories from the Sisterhood</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard-testimonial" *ngFor="let t of testimonials; let i=index" [scrollReveal]="i*100">
+        <div class="tcard-testimonial__quote">"</div>
+        <p class="tcard-testimonial__text">{{t.text}}</p>
+        <div class="tcard-testimonial__author">
+          <img [src]="t.photo" [alt]="t.name" loading="lazy"
+               onerror="this.src='https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&q=80'"/>
+          <div>
+            <strong>{{t.name}}</strong>
+            <span>{{t.location}}</span>
+          </div>
+        </div>
+        <div class="tcard-testimonial__stars">5 Stars</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta-section">
+  <div class="cta-section__inner" [scrollReveal]="0">
+    <span class="eyebrow eyebrow--light">Ready to Claim Your Crown?</span>
+    <h2>Join the Adventure Today</h2>
+    <p>Thousands of fearless women are already travelling boldly across Tanzania and the world. Your seat is waiting.</p>
+    <div class="cta-section__actions">
+      <a routerLink="/booking" class="btn btn--gold btn--xl">Book a Tour</a>
+      <a routerLink="/contact" class="btn btn--outline-white btn--xl">Get in Touch</a>
+    </div>
+  </div>
+</section>

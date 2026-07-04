@@ -1,0 +1,184 @@
+<div class="page-content">
+<app-page-banner title="Book a Tour" subtitle="Reserve your adventure in minutes" eyebrow="Booking" img="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=1600&q=85" minHeight="360px"></app-page-banner>
+
+<section class="section section--alt">
+  <div class="container booking-container">
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="stepper__item" [class.active]="step>=1" [class.done]="step>1">
+        <div class="stepper__num">{{step>1?'✓':'1'}}</div>
+        <span>Select Tour</span>
+      </div>
+      <div class="stepper__line" [class.done]="step>1"></div>
+      <div class="stepper__item" [class.active]="step>=2" [class.done]="step>2">
+        <div class="stepper__num">{{step>2?'✓':'2'}}</div>
+        <span>Your Details</span>
+      </div>
+      <div class="stepper__line" [class.done]="step>2"></div>
+      <div class="stepper__item" [class.active]="step>=3">
+        <div class="stepper__num">3</div>
+        <span>Payment</span>
+      </div>
+    </div>
+
+    <div class="booking-grid">
+      <!-- STEP 1 -->
+      <form *ngIf="step===1" [formGroup]="step1Form" class="booking-form" (ngSubmit)="next()">
+        <h3>Select Your Tour</h3>
+        <div class="form-group">
+          <label class="form-label">Choose Tour *</label>
+          <select formControlName="tourId" class="form-control" [class.is-invalid]="step1Form.get('tourId')?.touched && step1Form.get('tourId')?.invalid">
+            <option value="">-- Select a tour --</option>
+            <option *ngFor="let t of tours" [value]="t.id">{{t.title}} ({{t.duration}}d - {{t.price.amount|number}} {{t.price.currency}})</option>
+          </select>
+          <div class="form-error" *ngIf="step1Form.get('tourId')?.touched && step1Form.get('tourId')?.invalid">Please select a tour</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Preferred Date *</label>
+            <input type="date" formControlName="tourDate" class="form-control" [class.is-invalid]="step1Form.get('tourDate')?.touched && step1Form.get('tourDate')?.invalid" [min]="today"/>
+            <div class="form-error" *ngIf="step1Form.get('tourDate')?.touched && step1Form.get('tourDate')?.invalid">Please select a date</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Number of Travelers *</label>
+            <input type="number" formControlName="travelers" class="form-control" min="1" max="20"/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--gold btn--lg" [disabled]="step1Form.invalid">Continue →</button>
+        </div>
+      </form>
+
+      <!-- STEP 2 -->
+      <form *ngIf="step===2" [formGroup]="step2Form" class="booking-form" (ngSubmit)="next()">
+        <h3>Lead Traveler Details</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input type="text" formControlName="firstName" class="form-control" [class.is-invalid]="step2Form.get('firstName')?.touched && step2Form.get('firstName')?.invalid" placeholder="e.g. Amina"/>
+            <div class="form-error" *ngIf="step2Form.get('firstName')?.touched && step2Form.get('firstName')?.invalid">Required</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input type="text" formControlName="lastName" class="form-control" placeholder="e.g. Mohamed"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" formControlName="email" class="form-control" [class.is-invalid]="step2Form.get('email')?.touched && step2Form.get('email')?.invalid" placeholder="your@email.com"/>
+            <div class="form-error" *ngIf="step2Form.get('email')?.touched && step2Form.get('email')?.invalid">Valid email required</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" formControlName="phone" class="form-control" placeholder="+255 7XX XXX XXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nationality *</label>
+          <input type="text" formControlName="nationality" class="form-control" placeholder="e.g. Tanzanian"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pickup Location <span style="color:#7A7A95">(optional)</span></label>
+          <input type="text" formControlName="pickup" class="form-control" placeholder="Hotel name or address"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Dietary Requirements</label>
+            <input type="text" formControlName="dietary" class="form-control" placeholder="e.g. Vegetarian, Halal"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Special Requests</label>
+            <input type="text" formControlName="special" class="form-control" placeholder="Any special needs?"/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--outline" (click)="back()">← Back</button>
+          <button type="submit" class="btn btn--gold btn--lg" [disabled]="step2Form.invalid">Continue →</button>
+        </div>
+      </form>
+
+      <!-- STEP 3 -->
+      <form *ngIf="step===3" [formGroup]="step3Form" class="booking-form" (ngSubmit)="submit()">
+        <h3>Payment</h3>
+        <div class="alert alert--info">Your payment is secured with SSL encryption.</div>
+        <div class="form-group">
+          <label class="form-label">Payment Method *</label>
+          <div class="payment-methods">
+            <label *ngFor="let m of paymentMethods" class="payment-method" [class.selected]="selectedPayment===m.value">
+              <input type="radio" formControlName="paymentMethod" [value]="m.value" style="display:none"/>
+              <span class="payment-method__icon">{{m.icon}}</span>
+              <span>{{m.label}}</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- M-Pesa / Airtel fields -->
+        <div *ngIf="selectedPayment==='mpesa'||selectedPayment==='airtel'" class="form-group">
+          <label class="form-label">Mobile Number *</label>
+          <input type="tel" formControlName="mpesaPhone" class="form-control" placeholder="+255 7XX XXX XXX"/>
+          <p class="form-hint">You will receive a push notification to confirm payment of <strong>{{totalAmount|number}} {{tour?.price?.currency}}</strong>.</p>
+        </div>
+
+        <!-- Card fields -->
+        <ng-container *ngIf="selectedPayment==='card'">
+          <div class="form-group">
+            <label class="form-label">Card Number *</label>
+            <input type="text" formControlName="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19"/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Expiry *</label>
+              <input type="text" formControlName="cardExpiry" class="form-control" placeholder="MM/YY" maxlength="5"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV *</label>
+              <input type="text" formControlName="cardCvv" class="form-control" placeholder="123" maxlength="4"/>
+            </div>
+          </div>
+        </ng-container>
+
+        <!-- Bank transfer -->
+        <div *ngIf="selectedPayment==='bank-transfer'" class="bank-details">
+          <h4>Bank Transfer Details</h4>
+          <div class="bank-row"><span>Bank:</span><strong>CRDB Bank Tanzania</strong></div>
+          <div class="bank-row"><span>Account Name:</span><strong>Tanzania Safari Queens Ltd</strong></div>
+          <div class="bank-row"><span>Account No:</span><strong>0150896321700</strong></div>
+          <div class="bank-row"><span>Branch:</span><strong>Dar es Salaam Main</strong></div>
+          <p style="font-size:.82rem;color:#7A7A95;margin-top:.75rem">Transfer <strong>{{totalAmount|number}} {{tour?.price?.currency}}</strong> and send proof to tanzaniasafariqueen&#64;gmail.com</p>
+        </div>
+
+        <div class="form-group" style="margin-top:1.25rem">
+          <label class="form-check">
+            <input type="checkbox" formControlName="agreeTerms"/>
+            <span>I agree to the <a routerLink="/contact">Terms & Conditions</a> and cancellation policy</span>
+          </label>
+          <div class="form-error" *ngIf="step3Form.get('agreeTerms')?.touched && step3Form.get('agreeTerms')?.invalid">You must agree to continue</div>
+        </div>
+
+        <div class="alert alert--error" *ngIf="error">{{error}}</div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--outline" (click)="back()">← Back</button>
+          <button type="submit" class="btn btn--gold btn--lg" [disabled]="step3Form.invalid||submitting">
+            {{submitting?'Processing...':'Confirm Booking - '+totalAmount+' '+(tour?.price?.currency||'TZS')}}
+          </button>
+        </div>
+      </form>
+
+      <!-- Booking Summary Sidebar -->
+      <aside class="booking-summary" *ngIf="tour">
+        <h4>Booking Summary</h4>
+        <img [src]="tour.coverImage" [alt]="tour.title" class="booking-summary__img" onerror="this.src='/assets/images/placeholder.jpg'"/>
+        <h3 class="booking-summary__title">{{tour.title}}</h3>
+        <div class="booking-summary__row"><span>Destination</span><strong>{{tour.destination}}</strong></div>
+        <div class="booking-summary__row"><span>Duration</span><strong>{{tour.duration}} days</strong></div>
+        <div class="booking-summary__row" *ngIf="step1Form.get('tourDate')?.value"><span>Date</span><strong>{{step1Form.get('tourDate')?.value|date}}</strong></div>
+        <div class="booking-summary__row"><span>Travelers</span><strong>{{step1Form.get('travelers')?.value}}</strong></div>
+        <div class="booking-summary__row"><span>Price/person</span><strong>{{tour.price.amount|number}} {{tour.price.currency}}</strong></div>
+        <div class="booking-summary__total"><span>TOTAL</span><strong>{{totalAmount|number}} {{tour.price.currency}}</strong></div>
+      </aside>
+    </div>
+  </div>
+</section>
+</div>

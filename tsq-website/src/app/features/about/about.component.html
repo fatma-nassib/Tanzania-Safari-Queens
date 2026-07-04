@@ -1,0 +1,139 @@
+<div class="page-content">
+
+<!-- HERO -->
+<app-page-banner
+  title="About Tanzania Safari Queens"
+  subtitle="The Queens of Adventure - Fearless, Bold, Unstoppable"
+  eyebrow="Our Story"
+  img="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=1600&q=85">
+</app-page-banner>
+
+<!-- MISSION / VISION / MOTTO -->
+<section class="section section--ivory">
+  <div class="container">
+    <div class="text-center" [scrollReveal]="0">
+      <span class="eyebrow">Who We Are</span>
+      <h2>A Vibrant, Inclusive Community for Fearless Women</h2>
+    </div>
+    <div class="about-intro-text" [scrollReveal]="80">
+      <p>Tanzania Safari Queens is a vibrant, inclusive community for women of all backgrounds, races, and cultures who love Adventure, Connecting, and exploring the beauty of Tanzania and beyond.</p>
+      <p>We are a <strong>royal sisterhood</strong> of adventurous, bold, and fearless women. Here, we <strong>share, inspire, empower,</strong> and <strong>explore</strong> - from the heart of Tanzania to the world. Whether you're chasing dreams, discovering new places, growing a business, shaping your career, or finding your voice - <em>you belong here.</em></p>
+      <p>We believe that <strong>adventure &amp; success is better together.</strong></p>
+    </div>
+
+    <!-- Mission / Vision / Motto cards -->
+    <div class="mvm-grid">
+      <div class="mvm-card" [scrollReveal]="0">
+        <div class="mvm-card__icon">Target</div>
+        <div class="mvm-card__tag">Mission</div>
+        <p>Our mission is to empower women to claim their crown of adventure - exploring the world fearlessly, building global sisterhood, and rewriting what it means to travel &amp; succeed as a woman.</p>
+      </div>
+      <div class="mvm-card mvm-card--featured" [scrollReveal]="100">
+        <div class="mvm-card__icon">Crown</div>
+        <div class="mvm-card__tag">Motto</div>
+        <blockquote>"Queens of Adventure - Fearless, Bold, Unstoppable"</blockquote>
+        <p>And every adventure is shared and celebrated.</p>
+      </div>
+      <div class="mvm-card" [scrollReveal]="200">
+        <div class="mvm-card__icon">Vision</div>
+        <div class="mvm-card__tag">Vision</div>
+        <p>To build a sisterhood of fearless women around the world, who travel boldly, connect globally, and never journey alone in any aspect of life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL-WIDTH IMAGE BREAK -->
+<div class="about-img-break">
+  <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=1600&q=85" alt="Women on safari adventure" loading="lazy"/>
+  <div class="about-img-break__overlay">
+    <span class="eyebrow eyebrow--light">The Queens of Adventure</span>
+    <h2>Fearless · Bold · Unstoppable</h2>
+  </div>
+</div>
+
+<!-- CORE VALUES -->
+<section class="section section--parch">
+  <div class="container">
+    <div class="text-center section-head" [scrollReveal]="0">
+      <span class="eyebrow">What Guides Us</span>
+      <h2>Our Core Values</h2>
+      <p class="section-head__sub">These are the principles that guide our actions and define our Community in how we connect, grow, and explore together.</p>
+    </div>
+    <div class="values-list">
+      <div class="value-item" *ngFor="let v of values; let i=index" [scrollReveal]="i*70">
+        <div class="value-item__icon">{{v.icon}}</div>
+        <div class="value-item__text">
+          <h4>{{v.title}}</h4>
+          <p>{{v.desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS & OBJECTIVES -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="goals-split">
+      <div [scrollReveal]="0">
+        <span class="eyebrow eyebrow--light">Our Purpose</span>
+        <h2>Goals &amp; Objectives</h2>
+        <p style="color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:1.5rem">
+          Our goal is to build an inclusive sisterhood that empowers women to travel boldly, connect globally, and celebrate the beauty of Tanzania and beyond.
+        </p>
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=85"
+             alt="Women empowerment" loading="lazy" class="goals-img" [scrollReveal]="100"/>
+      </div>
+      <div class="objectives-list" [scrollReveal]="150">
+        <div class="obj-item" *ngFor="let o of objectives; let i=index">
+          <span class="obj-item__num">{{i+1|number:'2.0'}}</span>
+          <div>
+            <strong>{{o.title}}</strong>
+            <p>{{o.desc}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONE TIMELINE -->
+<section class="section section--ivory">
+  <div class="container">
+    <div class="text-center section-head" [scrollReveal]="0">
+      <span class="eyebrow">Our Journey</span>
+      <h2>Milestones</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline__item" *ngFor="let m of milestones; let i=index; let odd=odd"
+           [class.timeline__item--right]="odd" [scrollReveal]="i*80">
+        <div class="timeline__card">
+          <div class="timeline__year">{{m.year}}</div>
+          <p>{{m.event}}</p>
+        </div>
+        <div class="timeline__dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="about-gallery-strip">
+  <img *ngFor="let img of galleryStrip" [src]="img.url" [alt]="img.alt" loading="lazy"
+       onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80'"/>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-section__inner" [scrollReveal]="0">
+    <span class="eyebrow eyebrow--light">Join the Sisterhood</span>
+    <h2>Ready to Be a Queen of Adventure?</h2>
+    <p>Become part of a community that travels boldly, invests wisely, and celebrates every woman.</p>
+    <div class="cta-section__actions">
+      <a routerLink="/tours"   class="btn btn--gold btn--xl">Explore Tours</a>
+      <a routerLink="/contact" class="btn btn--outline-white btn--xl">Contact Us</a>
+    </div>
+  </div>
+</section>
+</div>

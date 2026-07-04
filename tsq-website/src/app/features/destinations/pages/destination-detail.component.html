@@ -1,0 +1,61 @@
+<div class="page-content" *ngIf="dest">
+<app-page-banner [title]="dest.name" [subtitle]="dest.country" eyebrow="Destination Guide" [img]="dest.img"></app-page-banner>
+
+<section class="section section--cream">
+  <div class="container dd-grid">
+    <div [scrollReveal]="0">
+      <div class="breadcrumb">
+        <a routerLink="/destinations">Destinations</a><span>›</span><span>{{dest.name}}</span>
+      </div>
+      <span class="eyebrow">About this Destination</span>
+      <h2>{{dest.name}}, {{dest.country}}</h2>
+      <p style="color:#4A3728;line-height:1.85;margin-bottom:1.5rem;font-size:1.02rem">{{dest.desc}}</p>
+
+      <h3 style="margin-bottom:1rem">Highlights</h3>
+      <div class="dest-highlights">
+        <div class="dest-highlight" *ngFor="let h of dest.highlights">
+          <span class="dest-highlight__icon">✦</span> {{h}}
+        </div>
+      </div>
+
+      <div class="best-time-card" *ngIf="dest.bestTime">
+        <span>🗓️</span>
+        <div><strong>Best Time to Visit</strong><p>{{dest.bestTime}}</p></div>
+      </div>
+    </div>
+
+    <aside [scrollReveal]="100">
+      <div class="dest-cta-card">
+        <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=400&q=80"
+             alt="Plan your trip" style="width:100%;border-radius:10px;margin-bottom:1.25rem;aspect-ratio:16/9;object-fit:cover"/>
+        <h4>Plan Your Trip to {{dest.name}}</h4>
+        <p>Our expert team will craft the perfect adventure for you.</p>
+        <a routerLink="/tours" class="btn btn--gold btn--full" style="margin-bottom:.75rem">View Tours</a>
+        <a routerLink="/contact" class="btn btn--outline-dark btn--full">Custom Enquiry</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--parch" *ngIf="tours.length">
+  <div class="container">
+    <span class="eyebrow">Available Experiences</span>
+    <h2>Tours in {{dest.name}}</h2>
+    <div class="grid-3" style="margin-top:2rem">
+      <app-tour-card *ngFor="let t of tours; let i=index" [tour]="t" [scrollReveal]="i*80"></app-tour-card>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-section__inner">
+    <span class="eyebrow eyebrow--light">Ready to go?</span>
+    <h2>Book Your {{dest.name}} Adventure</h2>
+    <p>Join the sisterhood of fearless women who have already explored this incredible destination.</p>
+    <div class="cta-section__actions">
+      <a routerLink="/booking" class="btn btn--gold btn--xl">Book Now</a>
+      <a routerLink="/contact" class="btn btn--outline-white btn--xl">Ask a Question</a>
+    </div>
+  </div>
+</section>
+</div>

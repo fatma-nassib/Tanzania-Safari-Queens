@@ -1,0 +1,51 @@
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar__brand">
+      <div class="admin-sidebar__brand-emblem">TSQ</div>
+      <div><div class="admin-sidebar__brand-text">Safari Queens</div><div class="admin-sidebar__brand-sub">Admin Panel</div></div>
+    </div>
+    <nav class="admin-sidebar__nav">
+      <div class="admin-sidebar__section-label">Main</div>
+      <a routerLink="/admin"          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="admin-nav-link"><span class="admin-nav-link__icon">Dashboard</span> Dashboard</a>
+      <a routerLink="/admin/bookings" routerLinkActive="active" class="admin-nav-link"><span class="admin-nav-link__icon">Bookings</span> Bookings</a>
+      <a routerLink="/admin/tours"    routerLinkActive="active" class="admin-nav-link"><span class="admin-nav-link__icon">Tours</span> Tours</a>
+      <div class="admin-sidebar__section-label" style="margin-top:1rem">Site</div>
+      <a routerLink="/" class="admin-nav-link"><span class="admin-nav-link__icon">Website</span> View Website</a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-topbar"><div><h2>Bookings</h2><p>Manage all customer bookings</p></div></div>
+    <div class="data-table-wrap">
+      <div class="data-table-header">
+        <div class="filter-bar">
+          <button *ngFor="let s of statuses" class="filter-chip" [class.active]="statusFilter===s"
+            (click)="statusFilter=s;filter()">{{s|titlecase}}</button>
+        </div>
+        <span style="font-size:.8rem;color:#8A7060">{{filtered.length}} result{{filtered.length===1?'':'s'}}</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead><tr><th>Ref</th><th>Tour</th><th>Lead Traveler</th><th>Email</th><th>Travelers</th><th>Amount</th><th>Payment</th><th>Status</th><th>Update</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let b of filtered">
+              <td><code>{{b.bookingRef}}</code></td>
+              <td>{{b.tourTitle}}</td>
+              <td>{{b.travelers[0]?.firstName}} {{b.travelers[0]?.lastName}}</td>
+              <td style="font-size:.78rem">{{b.travelers[0]?.email}}</td>
+              <td style="text-align:center">{{b.travelers.length}}</td>
+              <td><strong>{{b.totalAmount|number}}</strong> <small style="color:#8A7060">{{b.currency}}</small></td>
+              <td style="text-transform:capitalize">{{b.paymentMethod}}</td>
+              <td><span class="status-pill" [class]="'status-pill--'+b.status">{{b.status}}</span></td>
+              <td>
+                <select class="select-sm" [value]="b.status" (change)="updateStatus(b,$any($event.target).value)">
+                  <option *ngFor="let s of statuses.slice(1)" [value]="s">{{s|titlecase}}</option>
+                </select>
+              </td>
+            </tr>
+            <tr *ngIf="!filtered.length"><td colspan="9"><div class="empty-state"><div class="empty-state__icon">📭</div><p>No bookings match this filter.</p></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,50 @@
+@use '../../../../styles/_variables.scss' as *;
+
+.footer {
+  background:$earth;color:rgba(255,255,255,.75);
+
+  &__hero { position:relative;height:280px;overflow:hidden;
+    img{ width:100%;height:100%;object-fit:cover;object-position:center 60%;filter:brightness(.5); }
+    &-overlay{ position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;text-align:center;
+      h3{ color:#fff;font-family:$font-display;font-size:2rem;font-weight:700;margin-bottom:.4rem; }
+      p{ color:rgba(200,146,58,.9);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;font-family:$font-body; }
+    }
+  }
+
+  &__body { padding:4rem 1.75rem 2.5rem; }
+  &__inner { max-width:1240px;margin:0 auto;display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;
+    @media(max-width:1000px){ grid-template-columns:1fr 1fr; }
+    @media(max-width:560px){ grid-template-columns:1fr; }
+  }
+
+  &__emblem { width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,$savanna,$savanna-dark);color:#fff;
+    font-weight:800;font-size:.9rem;font-family:$font-body;
+    display:flex;align-items:center;justify-content:center;margin-bottom:1rem;
+    box-shadow:$shadow-gold;
+  }
+  &__mission { font-size:.875rem;line-height:1.8;margin-bottom:1.5rem;color:rgba(255,255,255,.65); }
+  &__socials { display:flex;flex-wrap:wrap;gap:.5rem; }
+  .social-btn { display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .9rem;
+    border-radius:20px;font-size:.75rem;font-weight:600;text-decoration:none;transition:all .2s;
+    &--wa{ background:#25D366;color:#fff;&:hover{background:darken(#25D366,8%);} }
+    &--ig{ background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;&:hover{opacity:.9;} }
+    &--fb{ background:#1877F2;color:#fff;&:hover{background:darken(#1877F2,8%);} }
+  }
+
+  &__col { h4{ color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;margin-bottom:1rem;font-family:$font-body;
+    padding-bottom:.5rem;border-bottom:1px solid rgba(200,146,58,.25); } }
+  &__link { display:block;color:rgba(255,255,255,.62);text-decoration:none;
+    font-size:.875rem;padding:.3rem 0;transition:color .2s;
+    &:hover{ color:$savanna; }
+  }
+  &__location { font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.5rem; }
+
+  &__bottom { border-top:1px solid rgba(255,255,255,.08);padding:1.25rem 1.75rem;
+    text-align:center;font-size:.78rem;color:rgba(255,255,255,.4);
+    &-sub{ margin-top:.25rem;color:rgba(200,146,58,.6); }
+  }
+}

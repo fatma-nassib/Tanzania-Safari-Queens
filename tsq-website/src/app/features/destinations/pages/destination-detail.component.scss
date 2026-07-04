@@ -1,0 +1,21 @@
+@use '../../../../styles/variables' as *;
+
+.dd-grid { display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start;
+  @media(max-width:960px){ grid-template-columns:1fr; } }
+
+.dest-highlights { display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem; }
+.dest-highlight { display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:$text-body;
+  padding:.4rem 0;border-bottom:1px solid rgba(200,146,58,.12);
+  &__icon{ color:$savanna;font-size:.75rem; }
+}
+.best-time-card { display:flex;align-items:flex-start;gap:.9rem;background:rgba(200,146,58,.08);
+  border:1px solid rgba(200,146,58,.25);border-radius:$radius-sm;padding:1rem 1.25rem;
+  strong{ display:block;font-size:.82rem;font-weight:700;color:$earth;margin-bottom:.2rem; }
+  p{ color:$text-body;font-size:.85rem;margin:0;line-height:1.5; }
+  span{ font-size:1.4rem;flex-shrink:0; }
+}
+.dest-cta-card { background:$ivory;border-radius:$radius;padding:1.75rem;box-shadow:$shadow-md;
+  border-top:4px solid $savanna;position:sticky;top:92px;
+  h4{ margin-bottom:.5rem; }
+  p{ color:$text-muted;font-size:.875rem;margin-bottom:1.25rem; }
+}

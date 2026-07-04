@@ -1,0 +1,1 @@
+export interface Destination { id:string; slug:string; name:string; country:string; region:string; tagline:string; description:string; coverImage:string; images:string[]; highlights:string[]; bestTime:string; tourCount:number; featured:boolean; }

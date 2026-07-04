@@ -1,0 +1,48 @@
+@use '../../../../styles/_variables.scss' as *;
+
+.tcard {
+  background:$ivory;border-radius:$radius;overflow:hidden;
+  box-shadow:$shadow-sm;transition:transform .35s,box-shadow .35s;
+  display:flex;flex-direction:column;
+  &:hover { transform:translateY(-7px);box-shadow:$shadow-lg; }
+
+  &__media { position:relative;display:block;aspect-ratio:16/10;overflow:hidden; }
+  &__img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
+  &__media:hover &__img { transform:scale(1.07); }
+
+  &__media-overlay {
+    position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,10,.6) 0%,transparent 55%);
+    display:flex;align-items:flex-end;justify-content:space-between;padding:.75rem;
+  }
+  &__cat {
+    background:$savanna;color:#fff;font-size:.68rem;font-weight:700;
+    padding:.2rem .6rem;border-radius:$radius-xs;letter-spacing:.04em;text-transform:uppercase;
+  }
+  &__diff {
+    font-size:.68rem;font-weight:700;padding:.2rem .6rem;border-radius:$radius-xs;text-transform:capitalize;
+  }
+  .diff-easy      { background:#EDF5EC;color:#2D6A2F; }
+  .diff-moderate  { background:#FDF6EC;color:#7A4D10; }
+  .diff-challenging{ background:#FBF0ED;color:#8B2C1A; }
+
+  &__body { padding:1.4rem;display:flex;flex-direction:column;flex:1; }
+  &__meta { display:flex;gap:.75rem;flex-wrap:wrap;font-size:.75rem;color:$text-muted;margin-bottom:.6rem; }
+  &__title { font-size:1.15rem;margin-bottom:.5rem;line-height:1.3;
+    a{ color:$text-dark;text-decoration:none;transition:color .2s;&:hover{color:$savanna;} }
+  }
+  &__summary { font-size:.875rem;color:$text-body;line-height:1.6;flex:1;margin-bottom:1rem;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  &__footer { display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;
+    padding-top:.75rem;border-top:1px solid rgba(200,146,58,.15);
+  }
+  &__rating { font-size:.82rem;
+    .stars{ color:$savanna;font-weight:700; }
+    .reviews{ color:$text-muted;margin-left:.25rem; }
+  }
+  &__price { font-size:.8rem;color:$text-body;text-align:right;
+    small{ color:$text-muted;display:block; }
+    strong{ font-family:$font-display;font-size:1.2rem;color:$earth;display:block;line-height:1; }
+  }
+  &__cta { width:100%;justify-content:center; }
+}
