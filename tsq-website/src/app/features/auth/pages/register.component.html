@@ -1,0 +1,49 @@
+<div class="auth-page">
+  <div class="auth-image">
+    <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800&q=85" alt="African women adventure"/>
+    <div class="auth-image__overlay">
+      <div class="auth-image__brand">Tanzania Safari Queens</div>
+      <h2>Join the Sisterhood 👑</h2>
+      <p>500+ fearless women are already exploring Tanzania and the world together. Your crown is waiting.</p>
+    </div>
+  </div>
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <div class="auth-card__emblem">TSQ</div>
+      <h2>Create Account</h2>
+      <p class="auth-card__sub">Join the community of fearless women</p>
+      <div class="alert alert--error" *ngIf="error">{{error}}</div>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" formControlName="displayName" class="form-control"
+            [class.is-invalid]="form.get('displayName')?.touched && form.get('displayName')?.invalid"
+            placeholder="e.g. Amina Mohamed"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" formControlName="email" class="form-control"
+            [class.is-invalid]="form.get('email')?.touched && form.get('email')?.invalid"
+            placeholder="you@email.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password * <small style="color:#8A7060">(min. 8 characters)</small></label>
+          <input type="password" formControlName="password" class="form-control"
+            [class.is-invalid]="form.get('password')?.touched && form.get('password')?.invalid"
+            placeholder="Choose a strong password"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password *</label>
+          <input type="password" formControlName="confirm" class="form-control"
+            [class.is-invalid]="form.errors?.['mismatch'] && form.get('confirm')?.touched"
+            placeholder="Repeat password"/>
+          <div class="form-error" *ngIf="form.errors?.['mismatch'] && form.get('confirm')?.touched">Passwords do not match</div>
+        </div>
+        <button type="submit" class="btn btn--gold btn--full btn--lg" [disabled]="submitting">
+          {{submitting?'Creating account…':'Create My Account'}}
+        </button>
+      </form>
+      <p class="auth-card__switch">Already a Queen? <a routerLink="/auth/login">Sign in here</a></p>
+    </div>
+  </div>
+</div>

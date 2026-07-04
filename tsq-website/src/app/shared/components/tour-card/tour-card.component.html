@@ -1,0 +1,33 @@
+<article class="tcard">
+  <a [routerLink]="['/tours', tour.slug]" class="tcard__media">
+    <img [src]="tour.coverImage" [alt]="tour.title" loading="lazy" class="tcard__img"
+         onerror="this.src='https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=600&q=80'"/>
+    <div class="tcard__media-overlay">
+      <span class="tcard__cat">{{tour.category.replace('-',' ')|titlecase}}</span>
+      <span class="tcard__diff" [class]="'diff-'+tour.difficulty">{{tour.difficulty}}</span>
+    </div>
+  </a>
+  <div class="tcard__body">
+    <div class="tcard__meta">
+      <span>{{tour.destination}}</span>
+      <span>{{tour.duration}} {{tour.duration===1?'day':'days'}}</span>
+      <span>{{tour.groupSize.min}}–{{tour.groupSize.max}}</span>
+    </div>
+    <h3 class="tcard__title"><a [routerLink]="['/tours', tour.slug]">{{tour.title}}</a></h3>
+    <p class="tcard__summary">{{tour.summary}}</p>
+    <div class="tcard__footer">
+      <div class="tcard__rating">
+        <span class="stars">{{tour.rating}}</span>
+        <span class="reviews">({{tour.reviewCount}} reviews)</span>
+      </div>
+      <div class="tcard__price">
+        <small>From</small>
+        <strong>{{tour.price.amount | number}} {{tour.price.currency}}</strong>
+        <small>/ person</small>
+      </div>
+    </div>
+    <a [routerLink]="['/tours', tour.slug]" class="btn btn--outline-dark btn--sm tcard__cta">
+      View Details →
+    </a>
+  </div>
+</article>

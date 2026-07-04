@@ -1,0 +1,41 @@
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar__brand">
+      <div class="admin-sidebar__brand-emblem">TSQ</div>
+      <div><div class="admin-sidebar__brand-text">Safari Queens</div><div class="admin-sidebar__brand-sub">Admin Panel</div></div>
+    </div>
+    <nav class="admin-sidebar__nav">
+      <div class="admin-sidebar__section-label">Main</div>
+      <a routerLink="/admin"          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="admin-nav-link"><span class="admin-nav-link__icon">Dashboard</span> Dashboard</a>
+      <a routerLink="/admin/bookings" routerLinkActive="active" class="admin-nav-link"><span class="admin-nav-link__icon">Bookings</span> Bookings</a>
+      <a routerLink="/admin/tours"    routerLinkActive="active" class="admin-nav-link"><span class="admin-nav-link__icon">Tours</span> Tours</a>
+      <div class="admin-sidebar__section-label" style="margin-top:1rem">Site</div>
+      <a routerLink="/" class="admin-nav-link"><span class="admin-nav-link__icon">Website</span> View Website</a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div><h2>Tours Management</h2><p>All active tours in the system</p></div>
+      <a routerLink="/tours" class="btn btn--gold btn--sm">View Public Tours</a>
+    </div>
+    <div class="data-table-wrap">
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead><tr><th>Cover</th><th>Title</th><th>Destination</th><th>Duration</th><th>Price (TZS)</th><th>Rating</th><th>Featured</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let t of tours">
+              <td><img [src]="t.coverImage" [alt]="t.title" style="width:60px;height:42px;object-fit:cover;border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=120&q=70'"/></td>
+              <td><strong>{{t.title}}</strong></td>
+              <td>{{t.destination}}</td>
+              <td>{{t.duration}}d</td>
+              <td>{{t.price.amount|number}}</td>
+              <td>{{t.rating}} <small style="color:#8A7060">({{t.reviewCount}})</small></td>
+              <td>{{t.featured ? 'Yes' : '-'}}</td>
+              <td><span class="status-pill" [class]="t.active?'status-pill--active':'status-pill--inactive'">{{t.active?'Active':'Inactive'}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>

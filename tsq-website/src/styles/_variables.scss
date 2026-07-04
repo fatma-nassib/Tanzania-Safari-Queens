@@ -1,0 +1,36 @@
+// ═══════════════════════════════════════════════════════
+//  TSQ - Earthy Safari Palette (inspired by serengeti.com)
+// ═══════════════════════════════════════════════════════
+
+// Warm earth tones - replacing cold blue
+$savanna:      #C8923A;   // golden savanna / primary accent
+$savanna-dark: #9E6D1E;   // deeper gold - hover
+$earth:        #3D2B1F;   // deep espresso - headings, footer
+$earth-mid:    #5C3D2E;   // bark brown - navbar scrolled
+$terracotta:   #B05A34;   // terracotta - secondary accent
+$safari-green: #4A6741;   // forest green - success, nature
+$cream:        #FAF6EF;   // warm off-white - page bg
+$parchment:    #F0E9DC;   // warm section alt
+$ivory:        #FDF9F4;   // cards
+$white:        #FFFFFF;
+
+// Text
+$text-dark:    #1C120A;   // deepest - headings
+$text-body:    #4A3728;   // warm body text
+$text-muted:   #8A7060;   // captions, meta
+$text-light:   rgba(255,255,255,.88);
+
+// Structural
+$radius:       14px;
+$radius-sm:    8px;
+$radius-xs:    4px;
+
+// Shadows
+$shadow-sm:    0 2px 12px rgba(61,43,31,.08);
+$shadow-md:    0 6px 24px rgba(61,43,31,.13);
+$shadow-lg:    0 16px 48px rgba(61,43,31,.18);
+$shadow-gold:  0 8px 32px rgba(200,146,58,.35);
+
+// Typography
+$font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+$font-body:    'Jost', 'Inter', system-ui, sans-serif;

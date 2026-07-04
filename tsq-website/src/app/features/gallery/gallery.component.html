@@ -1,0 +1,41 @@
+<div class="page-content">
+<app-page-banner
+  title="Our Gallery"
+  subtitle="Moments of adventure, sisterhood and unstoppable women"
+  eyebrow="Memories"
+  img="https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?w=1600&q=85">
+</app-page-banner>
+
+<section class="section section--cream">
+  <div class="container">
+    <!-- Category tabs -->
+    <div class="gallery-tabs" [scrollReveal]="0">
+      <button *ngFor="let c of categories" class="gallery-tab"
+        [class.gallery-tab--active]="activeCategory===c.value" (click)="activeCategory=c.value">
+        {{c.label}}
+      </button>
+    </div>
+    <p class="gallery-count">{{filtered.length}} photo{{filtered.length===1?'':'s'}}</p>
+
+    <!-- Masonry grid -->
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let p of filtered; let i=index"
+           [scrollReveal]="i*30" (click)="openLightbox(p.src)">
+        <img [src]="p.src" [alt]="p.alt" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=70'"/>
+        <div class="gallery-item__overlay">
+          <span class="gallery-item__zoom">🔍</span>
+          <span class="gallery-item__label">{{p.alt}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
+  <button class="lightbox__close" (click)="closeLightbox()" aria-label="Close">✕</button>
+  <img [src]="lightboxImg" alt="Gallery preview" (click)="$event.stopPropagation()"
+       onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900&q=80'"/>
+</div>
+</div>

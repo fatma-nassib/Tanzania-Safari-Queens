@@ -1,0 +1,58 @@
+<div class="page-content">
+<app-page-banner
+  title="Tours & Safaris"
+  subtitle="Curated adventures for fearless women across Tanzania and the world"
+  eyebrow="Explore"
+  img="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=85">
+</app-page-banner>
+
+<section class="section section--cream">
+  <div class="container">
+    <!-- Filter bar -->
+    <div class="tours-filter" [scrollReveal]="0">
+      <div class="tours-filter__search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search tours or destinations..." class="tours-filter__input" (input)="onSearch($event)"/>
+      </div>
+      <div class="tours-filter__cats">
+        <button *ngFor="let c of categories" class="filter-pill"
+          [class.filter-pill--active]="activeCategory===c.value" (click)="setCategory(c.value)">
+          {{c.label}}
+        </button>
+      </div>
+    </div>
+
+    <p class="tours-meta" *ngIf="filtered.length">
+      Showing <strong>{{filtered.length}}</strong> tour{{filtered.length===1?'':'s'}}
+    </p>
+
+    <div class="grid-3" style="margin-top:1.5rem">
+      <app-tour-card *ngFor="let t of filtered; let i=index" [tour]="t" [scrollReveal]="i*60">
+      </app-tour-card>
+    </div>
+
+    <div *ngIf="!filtered.length" class="tours-empty">
+      <div class="tours-empty__icon">🔍</div>
+      <h3>No tours found</h3>
+      <p>Try adjusting your search or filters.</p>
+      <button class="btn btn--gold" (click)="search='';activeCategory='all';filter()">Clear Filters</button>
+    </div>
+  </div>
+</section>
+
+<!-- Why book with us -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="text-center section-head" [scrollReveal]="0">
+      <span class="eyebrow eyebrow--light">Why Book With TSQ</span>
+      <h2>The TSQ Difference</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" [scrollReveal]="0"><div class="why-card__icon">Safety</div><h4>Safety First</h4><p>All trips are thoroughly vetted with certified guides and 24/7 support.</p></div>
+      <div class="why-card" [scrollReveal]="80"><div class="why-card__icon">Women</div><h4>Women-Only Groups</h4><p>Travel in a safe, empowering, all-female environment with like-minded Queens.</p></div>
+      <div class="why-card" [scrollReveal]="160"><div class="why-card__icon">Payment</div><h4>M-Pesa & Card</h4><p>Book and pay easily via M-Pesa, Airtel Money, card or bank transfer.</p></div>
+      <div class="why-card" [scrollReveal]="240"><div class="why-card__icon">Guides</div><h4>Expert Local Guides</h4><p>Our guides are locals who know Tanzania intimately - culture, wildlife, hidden gems.</p></div>
+    </div>
+  </div>
+</section>
+</div>

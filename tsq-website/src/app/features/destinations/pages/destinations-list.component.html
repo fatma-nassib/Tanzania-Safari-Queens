@@ -1,0 +1,35 @@
+<div class="page-content">
+<app-page-banner
+  title="Destinations"
+  subtitle="From the Serengeti to Bali - your next adventure awaits"
+  eyebrow="Explore the World"
+  img="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1600&q=85">
+</app-page-banner>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="region-tabs" [scrollReveal]="0">
+      <button *ngFor="let r of regions" class="region-tab"
+        [class.region-tab--active]="activeRegion===r.value" (click)="activeRegion=r.value">
+        {{r.label}}
+      </button>
+    </div>
+    <div class="dest-masonry">
+      <app-destination-card *ngFor="let d of filtered; let i=index"
+        [destination]="d" [scrollReveal]="i*55">
+      </app-destination-card>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-section__inner">
+    <span class="eyebrow eyebrow--light">Can't find your dream destination?</span>
+    <h2>We Plan Custom Trips Too</h2>
+    <p>Tell us where you want to go and we'll craft the perfect itinerary for your group of Queens.</p>
+    <div class="cta-section__actions">
+      <a routerLink="/contact" class="btn btn--gold btn--xl">Request Custom Trip</a>
+    </div>
+  </div>
+</section>
+</div>

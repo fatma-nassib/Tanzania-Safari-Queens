@@ -1,0 +1,18 @@
+<section class="hero" [style.min-height]="minHeight">
+  <div class="hero__bg" [style.background-image]="'url('+imageUrl+')'"></div>
+  <div class="hero__gradient"></div>
+  <div class="hero__overlay" [style.opacity]="overlayOpacity"></div>
+  <div class="hero__content">
+    <span *ngIf="eyebrow" class="hero__eyebrow">{{eyebrow}}</span>
+    <h1 class="hero__title">{{title}}</h1>
+    <p *ngIf="subtitle" class="hero__sub">{{subtitle}}</p>
+    <div class="hero__actions" *ngIf="ctaLabel">
+      <a [routerLink]="ctaLink" class="btn btn--gold btn--xl">{{ctaLabel}}</a>
+      <a *ngIf="ctaLabel2" [routerLink]="ctaLink2" class="btn btn--outline-white btn--xl">{{ctaLabel2}}</a>
+    </div>
+  </div>
+  <div class="hero__scroll-cue">
+    <div class="hero__scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
