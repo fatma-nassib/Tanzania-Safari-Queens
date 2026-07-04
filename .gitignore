@@ -22,3 +22,6 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Environment files
+tsq-website/src/environments/environment.ts
