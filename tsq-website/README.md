@@ -1,8 +1,8 @@
-# Tanzania Safari Queens — Angular Website (Redesigned)
+# Tanzania Safari Queens — Angular Website 
 
 > **Women Travel & Investment Community** | Angular 17 + Firebase + Flutterwave
 
-## 🎨 Design System
+##  Design System
 
 ### Color Palette (Earthy Safari — inspired by serengeti.com)
 | Token | Hex | Usage |
@@ -29,7 +29,7 @@ All images are real Unsplash photos of African / Tanzanian scenes and Black wome
 - Tours & destinations: authentic African location photography
 - Auth pages: split-screen with immersive African imagery
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # 1. Install dependencies
@@ -42,7 +42,7 @@ nano src/environments/environment.ts
 ng serve    # → http://localhost:4200
 ```
 
-## 📁 Project Structure
+##  Project Structure
 ```
 src/app/
 ├── core/           # Guards, interceptors, services, models
@@ -68,7 +68,7 @@ src/app/
     └── admin/          # Dashboard KPIs, Bookings management, Tours management
 ```
 
-## 🔧 Setup Checklist
+##  Setup Checklist
 
 ### Firebase
 1. Go to https://console.firebase.google.com
@@ -90,7 +90,7 @@ GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json node scripts/seed-firest
 1. Create account at https://flutterwave.com
 2. Get public key → `src/environments/environment.ts` → `flutterwave.publicKey`
 
-## 🚢 Deploy
+##  Deploy
 
 ```bash
 # Build for production
@@ -106,7 +106,7 @@ npm install -g vercel
 vercel --prod
 ```
 
-## 📸 Replacing Placeholder Images
+##  Replacing Placeholder Images
 All current images use Unsplash URLs. To use your own TSQ photos:
 1. Upload to `src/assets/images/` (or Firebase Storage)
 2. Replace Unsplash URLs in:
@@ -115,4 +115,4 @@ All current images use Unsplash URLs. To use your own TSQ photos:
    - `src/app/features/gallery/gallery.component.ts` (all 29 gallery photos)
    - `src/app/features/about/about.component.ts` (gallery strip)
 
-Built with 💛 for Tanzania Safari Queens — Dar es Salaam, Tanzania 🇹🇿
+Built for Tanzania Safari Queens
