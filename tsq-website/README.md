@@ -29,18 +29,89 @@ All images are real Unsplash photos of African / Tanzanian scenes and Black wome
 - Tours & destinations: authentic African location photography
 - Auth pages: split-screen with immersive African imagery
 
+##  Repo layout
+
+```
+~/tsq-redesign/                 ← git repo root (run git commands here)
+└── tsq-website/                ← Angular app (run npm / ng commands here)
+    ├── src/                    ← all frontend code
+    └── src/environments/
+        └── environment.ts      ← Firebase + Flutterwave config
+```
+
+**Rule of thumb:** `git` from `~/tsq-redesign`, `npm` / `ng` from `~/tsq-redesign/tsq-website`.
+
 ##  Quick Start
 
 ```bash
-# 1. Install dependencies
+# From repo root
+cd ~/tsq-redesign/tsq-website
+
+# 1. Install dependencies (first time, or after pull)
 npm install
 
-# 2. Add Firebase config to environment.ts
-nano src/environments/environment.ts
+# 2. Confirm Firebase config exists
+#    Edit if needed: src/environments/environment.ts
 
-# 3. Run
-ng serve    # → http://localhost:4200
+# 3. Start the frontend
+npm start
+# same as: ng serve
+# → http://localhost:4200
+
+# Stop the server: Ctrl + C
 ```
+
+##  Backend (Firebase — no local server)
+
+This project has **no separate backend folder**. Firebase is the backend. The Angular app talks to it directly via `src/environments/environment.ts`.
+
+| Service | What it does |
+|---|---|
+| **Firestore** | Database (tours, bookings, users) |
+| **Authentication** | Login / register |
+| **Storage** | Images |
+| **Flutterwave** | Payments (called from the frontend) |
+
+You do **not** run a backend server locally.
+
+**Firebase Console:** https://console.firebase.google.com/project/tanzania-safari-queens
+
+##  Command cheat sheet
+
+| Task | Command |
+|---|---|
+| Go to project | `cd ~/tsq-redesign` |
+| Start frontend | `cd tsq-website && npm start` |
+| Install deps (first time / after pull) | `cd tsq-website && npm install` |
+| Build for production | `cd tsq-website && npm run build:prod` |
+| Check git status | `git status` |
+| See your branch | `git branch` |
+| Push to GitHub | `git push origin main` |
+| Pull from GitHub | `git pull origin main` |
+| Seed database (optional) | `cd tsq-website && GOOGLE_APPLICATION_CREDENTIALS=./serviceAccountKey.json node scripts/seed-firestore.js` |
+| Deploy to Firebase Hosting | `cd tsq-website && firebase deploy` |
+
+##  Git (one branch: `main`)
+
+Work on **`main` only**. Keep the working tree clean before switching tasks.
+
+```bash
+cd ~/tsq-redesign
+git status
+git branch          # should show * main
+
+# After local commits, publish:
+git push origin main
+
+# Get remote updates:
+git pull origin main
+```
+
+If git says branches have **diverged** or you are **still merging**:
+
+1. Finish or abort the merge first (`git status` will say which).
+2. Prefer staying on a single `main` branch — do not create extra local branches unless needed.
+3. Remote-only branches (e.g. Dependabot) can be ignored or deleted on GitHub; they are not required locally.
 
 ##  Project Structure
 ```
