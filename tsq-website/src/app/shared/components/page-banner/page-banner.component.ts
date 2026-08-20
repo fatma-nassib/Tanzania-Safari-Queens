@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
     </div>
   </section>`,
   styles:[`
-    @use '../../../styles/variables' as * with ($savanna:#C8923A,$earth:#3D2B1F,$font-display:'Cormorant Garamond',serif,$font-body:'Jost',sans-serif);
     .pb{ position:relative;min-height:420px;display:flex;align-items:flex-end;justify-content:center;
       background-size:cover;background-position:center 30%;background-color:#3D2B1F; }
     .pb__overlay{ position:absolute;inset:0;

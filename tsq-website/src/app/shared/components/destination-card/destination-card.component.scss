@@ -1,7 +1,5 @@
-@use '../../../styles/variables' as *;
-
 .dcard {
-  position:relative;display:block;border-radius:$radius;overflow:hidden;
+  position:relative;display:block;border-radius:8px;overflow:hidden;
   aspect-ratio:3/4;text-decoration:none;cursor:pointer;
 
   &__img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
@@ -15,8 +13,8 @@
   &:hover &__overlay { opacity:.9; }
 
   &__body { position:absolute;bottom:0;left:0;right:0;padding:1.5rem; }
-  &__country { font-size:.68rem;color:$savanna;font-weight:700;letter-spacing:.12em;text-transform:uppercase; }
+  &__country { font-size:.68rem;color:#C8923A;font-weight:700;letter-spacing:.12em;text-transform:uppercase; }
   &__name { color:#fff;font-size:1.4rem;font-weight:700;margin:.15rem 0 .3rem;text-shadow:0 2px 8px rgba(0,0,0,.4); }
   &__tagline { color:rgba(255,255,255,.75);font-size:.82rem;margin-bottom:.6rem;line-height:1.5; }
-  &__link { color:$savanna;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase; }
+  &__link { color:#C8923A;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase; }
 }

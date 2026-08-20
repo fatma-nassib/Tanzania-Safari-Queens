@@ -22,9 +22,14 @@ export class RegisterComponent {
   submit() {
     if (this.form.invalid) { this.form.markAllAsTouched(); return; }
     this.submitting = true;
+    console.log('Register form submitted', this.form.value);
     this.auth.register(this.form.value.email!, this.form.value.password!, this.form.value.displayName!).subscribe({
-      next: () => this.router.navigate(['/']),
+      next: (result) => {
+        console.log('Registration successful', result);
+        this.router.navigate(['/']);
+      },
       error: (e: any) => {
+        console.error('Registration error', e);
         const m: Record<string,string> = { 'auth/email-already-in-use':'Email already registered.', 'auth/weak-password':'Password too weak.' };
         this.error = m[e.code] || 'Registration failed.';
         this.submitting = false;

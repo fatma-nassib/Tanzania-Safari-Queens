@@ -1,8 +1,6 @@
-@use '../../../styles/variables' as *;
-
 .hero {
   position:relative;display:flex;align-items:center;justify-content:center;
-  overflow:hidden;background:$earth;
+  overflow:hidden;background:#3D2B1F;
 
   &__bg {
     position:absolute;inset:0;background-size:cover;background-position:center 30%;
@@ -21,13 +19,13 @@
     animation:fadeUp .95s cubic-bezier(.22,1,.36,1) both;
   }
   &__eyebrow {
-    display:inline-block;font-family:$font-body;font-size:.72rem;font-weight:700;
-    letter-spacing:.22em;text-transform:uppercase;color:$savanna;
+    display:inline-block;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;color:#C8923A;
     margin-bottom:1.25rem;
     &::before{ content:'- '; } &::after{ content:' -'; }
   }
   &__title {
-    font-family:$font-display;font-size:clamp(2.8rem,7vw,5.5rem);
+    font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.8rem,7vw,5.5rem);
     font-weight:700;color:#fff;line-height:1.07;margin-bottom:1.25rem;
     text-shadow:0 4px 30px rgba(0,0,0,.5);
     em{ font-style:italic;color:rgba(200,146,58,.95); }
@@ -45,7 +43,7 @@
     z-index:2;
   }
   &__scroll-line {
-    width:1px;height:48px;background:linear-gradient(to bottom,transparent,$savanna);
+    width:1px;height:48px;background:linear-gradient(to bottom,transparent,#C8923A);
     animation:scrollPulse 2s ease-in-out infinite;
   }
 }

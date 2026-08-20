@@ -21,22 +21,28 @@ export class AuthService {
     })
   );
 
-  constructor(private auth: Auth, private firestore: Firestore) {}
+  constructor(private auth: Auth, private firestore: Firestore) {
+    console.log('AuthService initialized', { auth: !!auth, firestore: !!firestore });
+  }
 
   register(email: string, password: string, displayName: string) {
+    console.log('Register attempt', { email, displayName });
     return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
       switchMap(async cred => {
+        console.log('User created successfully', cred.user.uid);
         const profile: UserProfile = {
           uid: cred.user.uid, email, displayName,
           role: 'member', joinedAt: new Date()
         };
         await setDoc(doc(this.firestore, 'users', cred.user.uid), profile);
+        console.log('User profile saved to Firestore');
         return profile;
       })
     );
   }
 
   login(email: string, password: string) {
+    console.log('Login attempt', { email });
     return from(signInWithEmailAndPassword(this.auth, email, password));
   }
 

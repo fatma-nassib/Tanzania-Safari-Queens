@@ -14,9 +14,17 @@ export class LoginComponent {
   submit() {
     if (this.form.invalid) { this.form.markAllAsTouched(); return; }
     this.submitting = true; this.error = '';
+    console.log('Login form submitted', this.form.value);
     this.auth.login(this.form.value.email!, this.form.value.password!).subscribe({
-      next: () => this.router.navigateByUrl(this.returnUrl),
-      error: (e: any) => { this.error = this.mapError(e.code); this.submitting = false; }
+      next: (result) => {
+        console.log('Login successful', result);
+        this.router.navigateByUrl(this.returnUrl);
+      },
+      error: (e: any) => {
+        console.error('Login error', e);
+        this.error = this.mapError(e.code);
+        this.submitting = false;
+      }
     });
   }
   loginGoogle() {
