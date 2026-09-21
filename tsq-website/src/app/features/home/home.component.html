@@ -50,7 +50,7 @@
   <div class="moments-grid">
     <div class="moment-tile" *ngFor="let m of moments; let i=index" [scrollReveal]="i*50">
       <img [src]="m.img" [alt]="m.label" loading="lazy"
-           onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80'"/>
+           onerror="this.src='/assets/images/African Savannah.jpeg'"/>
       <div class="moment-tile__label">{{m.label}}</div>
     </div>
   </div>

@@ -13,11 +13,11 @@
       <!-- Gallery -->
       <div class="td-gallery" [scrollReveal]="0">
         <img [src]="tour.images[activeImg]" [alt]="tour.title" class="td-gallery__hero"
-             onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900&q=85'"/>
+             onerror="this.src='/assets/images/African Savannah.jpeg'"/>
         <div class="td-gallery__thumbs">
           <img *ngFor="let img of tour.images; let i=index" [src]="img" (click)="activeImg=i"
                [class.active]="activeImg===i" class="td-gallery__thumb"
-               onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=200&q=80'"/>
+               onerror="this.src='/assets/images/African Savannah.jpeg'"/>
         </div>
       </div>
 

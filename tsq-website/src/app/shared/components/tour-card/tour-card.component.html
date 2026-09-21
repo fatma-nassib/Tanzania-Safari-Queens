@@ -1,7 +1,7 @@
 <article class="tcard">
   <a [routerLink]="['/tours', tour.slug]" class="tcard__media">
     <img [src]="tour.coverImage" [alt]="tour.title" loading="lazy" class="tcard__img"
-         onerror="this.src='https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=600&q=80'"/>
+         onerror="this.src='/assets/images/African Savannah.jpeg'"/>
     <div class="tcard__media-overlay">
       <span class="tcard__cat">{{tour.category.replace('-',' ')|titlecase}}</span>
       <span class="tcard__diff" [class]="'diff-'+tour.difficulty">{{tour.difficulty}}</span>

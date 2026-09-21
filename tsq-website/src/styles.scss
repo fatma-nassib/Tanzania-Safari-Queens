@@ -137,7 +137,7 @@ p  { margin-bottom:1rem; }
 // ── CTA section ───────────────────────────────────────────
 .cta-section {
   position:relative;padding:7rem 1.5rem;text-align:center;
-  background-image:url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1600&q=80');
+  background-image:url('/assets/images/African Savannah.jpeg');
   background-size:cover;background-position:center;background-attachment:fixed;
   &::before{ content:'';position:absolute;inset:0;background:rgba(28,18,10,.72); }
   &__inner{ position:relative;z-index:2;max-width:680px;margin-inline:auto; }

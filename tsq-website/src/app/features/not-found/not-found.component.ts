@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <div class="nf">
       <div class="nf__bg">
-        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1600&q=80" alt="Serengeti"/>
+        <img src="/assets/images/African Savannah.jpeg" alt="Serengeti"/>
       </div>
       <div class="nf__overlay"></div>
       <div class="nf__card">

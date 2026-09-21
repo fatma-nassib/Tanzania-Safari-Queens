@@ -22,7 +22,7 @@
       <div class="gallery-item" *ngFor="let p of filtered; let i=index"
            [scrollReveal]="i*30" (click)="openLightbox(p.src)">
         <img [src]="p.src" [alt]="p.alt" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=70'"/>
+             onerror="this.src='/assets/images/African Savannah.jpeg'"/>
         <div class="gallery-item__overlay">
           <span class="gallery-item__zoom">🔍</span>
           <span class="gallery-item__label">{{p.alt}}</span>
@@ -36,6 +36,6 @@
 <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
   <button class="lightbox__close" (click)="closeLightbox()" aria-label="Close">✕</button>
   <img [src]="lightboxImg" alt="Gallery preview" (click)="$event.stopPropagation()"
-       onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900&q=80'"/>
+       onerror="this.src='/assets/images/African Savannah.jpeg'"/>
 </div>
 </div>

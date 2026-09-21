@@ -24,7 +24,7 @@
           <thead><tr><th>Cover</th><th>Title</th><th>Destination</th><th>Duration</th><th>Price (TZS)</th><th>Rating</th><th>Featured</th><th>Status</th></tr></thead>
           <tbody>
             <tr *ngFor="let t of tours">
-              <td><img [src]="t.coverImage" [alt]="t.title" style="width:60px;height:42px;object-fit:cover;border-radius:6px;" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=120&q=70'"/></td>
+              <td><img [src]="t.coverImage" [alt]="t.title" style="width:60px;height:42px;object-fit:cover;border-radius:6px;" onerror="this.src='/assets/images/African Savannah.jpeg'"/></td>
               <td><strong>{{t.title}}</strong></td>
               <td>{{t.destination}}</td>
               <td>{{t.duration}}d</td>

@@ -29,5 +29,5 @@ import { RouterModule } from '@angular/router';
 })
 export class PageBannerComponent {
   @Input() title=''; @Input() subtitle=''; @Input() eyebrow='';
-  @Input() img='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1600&q=80';
+  @Input() img='/assets/images/African Savannah.jpeg';
 }
