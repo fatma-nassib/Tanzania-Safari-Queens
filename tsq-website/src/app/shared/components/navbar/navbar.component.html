@@ -1,8 +1,7 @@
 <header class="navbar" [class.navbar--scrolled]="scrolled">
   <div class="navbar__inner">
     <a routerLink="/" class="navbar__logo" (click)="closeMenu()">
-      <div class="navbar__logo-emblem">TSQ</div>
-      <span class="navbar__logo-text">Tanzania Safari Queens</span>
+      <img src="/assets/images/logo.jpg" alt="Tanzania Safari Queens" class="navbar__logo-img"/>
     </a>
     <nav class="navbar__links" aria-label="Main navigation">
       <a *ngFor="let l of links" [routerLink]="l.path" routerLinkActive="active"

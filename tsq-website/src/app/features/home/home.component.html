@@ -10,16 +10,6 @@
   ctaLink2="/contact">
 </app-hero-banner>
 
-<!-- ═══════ STATS ═══════ -->
-<div class="stats-bar">
-  <div class="stats-bar__inner">
-    <div class="stat"><div class="stat__num">500+</div><div class="stat__label">Queens Worldwide</div></div>
-    <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Destinations</div></div>
-    <div class="stat"><div class="stat__num">50+</div><div class="stat__label">Group Trips</div></div>
-    <div class="stat"><div class="stat__num">100%</div><div class="stat__label">Women-Led</div></div>
-  </div>
-</div>
-
 <!-- ═══════ ABOUT TEASER ═══════ -->
 <section class="section section--ivory">
   <div class="container">
@@ -139,31 +129,6 @@
       <li>Exclusive members-only events &amp; soirées</li>
     </ul>
     <a routerLink="/tours" class="btn btn--gold btn--lg" style="margin-top:1.5rem">Start Your Journey</a>
-  </div>
-</section>
-
-<!-- ═══════ TESTIMONIALS ═══════ -->
-<section class="section section--ivory">
-  <div class="container">
-    <div class="section-head text-center" [scrollReveal]="0">
-      <span class="eyebrow">What Our Queens Say</span>
-      <h2>Stories from the Sisterhood</h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="tcard-testimonial" *ngFor="let t of testimonials; let i=index" [scrollReveal]="i*100">
-        <div class="tcard-testimonial__quote">"</div>
-        <p class="tcard-testimonial__text">{{t.text}}</p>
-        <div class="tcard-testimonial__author">
-          <img [src]="t.photo" [alt]="t.name" loading="lazy"
-               onerror="this.src='https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&q=80'"/>
-          <div>
-            <strong>{{t.name}}</strong>
-            <span>{{t.location}}</span>
-          </div>
-        </div>
-        <div class="tcard-testimonial__stars">5 Stars</div>
-      </div>
-    </div>
   </div>
 </section>
 

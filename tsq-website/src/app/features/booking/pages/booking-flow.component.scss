@@ -1,5 +1,20 @@
 @use '../../../../styles/variables' as *;
 
+.booking-header {
+  display:flex;
+  justify-content:center;
+  padding:1.5rem 0;
+  background:$cream;
+}
+
+.booking-header__logo {
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:contain;
+  box-shadow:0 4px 12px rgba(200,146,58,.25);
+}
+
 .booking-container { max-width:1000px;margin-inline:auto; }
 
 // Stepper
