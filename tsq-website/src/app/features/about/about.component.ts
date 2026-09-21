@@ -33,12 +33,12 @@ export class AboutComponent {
   ];
 
   galleryStrip = [
-    { url:'https://images.unsplash.com/photo-1612296727716-d7b8e2b53f87?w=400&q=80', alt:'TSQ beach trip' },
-    { url:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80', alt:'Safari adventure' },
-    { url:'https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?w=400&q=80', alt:'Women community' },
-    { url:'https://images.unsplash.com/photo-1562832135-14a35d25edef?w=400&q=80', alt:'Group tour' },
-    { url:'https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=400&q=80', alt:'African sunset' },
-    { url:'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&q=80', alt:'Cultural experience' },
+    { url:'/assets/images/Island Gal 🌴.jpeg', alt:'TSQ beach trip' },
+    { url:'/assets/images/#safari #kenya #masaimara #lions #pictureinspo….jpeg', alt:'Safari adventure' },
+    { url:'/assets/images/Globalnista®_ BlackGirlTravel _ Exclusive Group Travel Club for Black Women.jpeg', alt:'Women community' },
+    { url:'/assets/images/654288652142854768.jpeg', alt:'Group tour' },
+    { url:'/assets/images/effdeesea ✨.jpeg', alt:'African sunset' },
+    { url:'/assets/images/8162843071361975.jpeg', alt:'Cultural experience' },
   ];
 
   constructor(private seo: SeoService) {
