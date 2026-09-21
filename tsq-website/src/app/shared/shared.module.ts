@@ -18,7 +18,7 @@ import { ScrollRevealDirective }   from './directives/scroll-reveal.directive';
 import { LazyImgDirective }        from './directives/lazy-img.directive';
 
 const DECLARATIONS = [
-  NavbarComponent, FooterComponent, HeroBannerComponent, PageBannerComponent,
+  NavbarComponent, FooterComponent, PageBannerComponent,
   TourCardComponent, DestinationCardComponent, ReviewCardComponent,
   WhatsappBtnComponent, LoadingSpinnerComponent,
   SafeUrlPipe, StarsPipe, ScrollRevealDirective, LazyImgDirective,
@@ -26,7 +26,7 @@ const DECLARATIONS = [
 
 @NgModule({
   declarations: DECLARATIONS,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
-  exports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ...DECLARATIONS],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, HeroBannerComponent],
+  exports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, HeroBannerComponent, ...DECLARATIONS],
 })
 export class SharedModule {}

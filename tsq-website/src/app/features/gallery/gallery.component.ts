@@ -20,7 +20,7 @@ export class GalleryComponent {
   // All local photos from assets/images
   allPhotos = [
     // Goal Setting
-    { src:'/assets/images/We raised families, built careers—now it's our….jpeg', alt:'Women empowerment talk', cat:'goal' },
+    { src:"/assets/images/We raised families, built careers—now it's our….jpeg", alt:'Women empowerment talk', cat:'goal' },
     { src:'/assets/images/Your Next Adventure Starts With a Plan ✈️🌍.jpeg', alt:'Group workshop', cat:'goal' },
     { src:'/assets/images/Screenshot From 2026-09-21 11-39-18.png', alt:'Planning session', cat:'goal' },
     { src:'/assets/images/Screenshot From 2026-09-21 11-40-19.png', alt:'Vision board', cat:'goal' },
