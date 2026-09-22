@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector:'app-page-banner',
   standalone:false,
   template:`
-  <section class="pb" [style.background-image]="'url('+img+')'">
+  <section class="pb" [ngStyle]="bgStyle">
     <div class="pb__overlay"></div>
     <div class="pb__content">
       <span *ngIf="eyebrow" class="hero__eyebrow">{{eyebrow}}</span>
@@ -30,4 +30,8 @@ import { RouterModule } from '@angular/router';
 export class PageBannerComponent {
   @Input() title=''; @Input() subtitle=''; @Input() eyebrow='';
   @Input() img='/assets/images/African Savannah.jpeg';
+
+  get bgStyle() {
+    return { 'background-image': `url("${this.img}")` };
+  }
 }

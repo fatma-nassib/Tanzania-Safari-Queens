@@ -1,5 +1,4 @@
 <footer class="footer">
-  <!-- Top image strip -->
   <div class="footer__hero">
     <img src="/assets/images/African Savannah.jpeg" alt="Tanzania landscape" loading="lazy"/>
     <div class="footer__hero-overlay">
@@ -10,49 +9,52 @@
 
   <div class="footer__body">
     <div class="footer__inner">
-      <!-- Brand -->
       <div class="footer__brand">
         <img src="/assets/images/logo.jpg" alt="Tanzania Safari Queens" class="footer__logo"/>
         <p class="footer__mission">
-          Empowering women to claim their crown of adventure - exploring the world fearlessly, building global sisterhood, and rewriting what it means to travel &amp; succeed as a woman.
+          A women travel group from Tanzania, bringing together like-minded women from all nations for unique adventures - connect, learn and experience the world's enchanting beauty.
         </p>
-        <div class="footer__socials">
-          <a href="https://wa.me/255763983920" target="_blank" class="social-btn social-btn--wa" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.057 23.535a.75.75 0 00.916.916l5.677-1.477A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.698-.5-5.254-1.377l-.377-.214-3.915 1.018 1.018-3.839-.231-.389A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-            WhatsApp
+        <div class="footer__socials" aria-label="Social links">
+          <a href="https://wa.me/255763983920" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp chat" title="WhatsApp">
+            <svg lucideMessageCircle [size]="18" [strokeWidth]="1.75" aria-hidden="true"></svg>
           </a>
-          <a href="https://www.instagram.com/tanzania__safari__queens/" target="_blank" class="social-btn social-btn--ig" aria-label="Instagram">Instagram</a>
-          <a href="#" class="social-btn social-btn--fb" aria-label="Facebook">Facebook</a>
+          <a href="https://chat.whatsapp.com/Fxg0peIDnl8KeLLddGsbui" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp community group" title="Community Group">
+            <svg lucideUsers [size]="18" [strokeWidth]="1.75" aria-hidden="true"></svg>
+          </a>
+          <a href="https://www.instagram.com/tanzania__safari__queens/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram" title="Instagram">
+            <svg lucideCamera [size]="18" [strokeWidth]="1.75" aria-hidden="true"></svg>
+          </a>
+          <a href="https://www.facebook.com/tanzania.safari.queens/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook" title="Facebook">
+            <svg lucideShare2 [size]="18" [strokeWidth]="1.75" aria-hidden="true"></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Explore -->
       <div class="footer__col">
         <h4>Explore</h4>
         <a routerLink="/destinations" class="footer__link">Destinations</a>
-        <a routerLink="/tours"        class="footer__link">Tours & Safaris</a>
-        <a routerLink="/gallery"      class="footer__link">Gallery</a>
-        <a routerLink="/about"        class="footer__link">About TSQ</a>
-        <a routerLink="/contact"      class="footer__link">Contact Us</a>
+        <a routerLink="/tours" class="footer__link">Tours &amp; Safaris</a>
+        <a routerLink="/gallery" class="footer__link">Gallery</a>
+        <a routerLink="/about" class="footer__link">About TSQ</a>
+        <a routerLink="/contact" class="footer__link">Contact Us</a>
       </div>
 
-      <!-- Book -->
       <div class="footer__col">
         <h4>Book</h4>
-        <a routerLink="/booking"     class="footer__link">Book a Tour</a>
-        <a routerLink="/auth/login"  class="footer__link">My Account</a>
+        <a routerLink="/booking" class="footer__link">Book a Tour</a>
+        <a routerLink="/auth/login" class="footer__link">My Account</a>
         <a routerLink="/auth/register" class="footer__link">Join the Community</a>
-        <a routerLink="/admin"       class="footer__link">Admin Panel</a>
       </div>
 
-      <!-- Contact -->
-      <div class="footer__col">
+      <div class="footer__col footer__col--contact">
         <h4>Contact</h4>
         <a href="tel:+255763983920" class="footer__link">+255 763 983 920</a>
         <a href="tel:+255745695215" class="footer__link">+255 745 695 215</a>
         <a href="tel:+255693124340" class="footer__link">+255 693 124 340</a>
-        <a href="mailto:tanzaniasafariqueen&#64;gmail.com" class="footer__link">tanzaniasafariqueen&#64;gmail.com</a>
+        <a href="mailto:tanzaniasafariqueen&#64;gmail.com" class="footer__link footer__link--email">tanzaniasafariqueen&#64;gmail.com</a>
+        <a href="https://chat.whatsapp.com/Fxg0peIDnl8KeLLddGsbui" target="_blank" rel="noopener noreferrer" class="footer__link footer__link--accent">Join WhatsApp Group</a>
         <p class="footer__location">Dar es Salaam, Tanzania</p>
+        <p class="footer__hours">Mon-Fri 8am-5pm · Sat 9am-2pm · Sun Closed</p>
       </div>
     </div>
   </div>

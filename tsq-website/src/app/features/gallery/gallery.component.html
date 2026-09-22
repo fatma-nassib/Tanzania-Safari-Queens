@@ -24,7 +24,9 @@
         <img [src]="p.src" [alt]="p.alt" loading="lazy"
              onerror="this.src='/assets/images/African Savannah.jpeg'"/>
         <div class="gallery-item__overlay">
-          <span class="gallery-item__zoom">🔍</span>
+          <span class="gallery-item__zoom" aria-hidden="true">
+            <svg lucideZoomIn [size]="22" [strokeWidth]="2"></svg>
+          </span>
           <span class="gallery-item__label">{{p.alt}}</span>
         </div>
       </div>
@@ -34,7 +36,9 @@
 
 <!-- Lightbox -->
 <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
-  <button class="lightbox__close" (click)="closeLightbox()" aria-label="Close">✕</button>
+  <button type="button" class="lightbox__close" (click)="closeLightbox()" aria-label="Close">
+    <svg lucideX [size]="22" [strokeWidth]="2" aria-hidden="true"></svg>
+  </button>
   <img [src]="lightboxImg" alt="Gallery preview" (click)="$event.stopPropagation()"
        onerror="this.src='/assets/images/African Savannah.jpeg'"/>
 </div>

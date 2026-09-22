@@ -16,6 +16,7 @@ import { SafeUrlPipe }             from './pipes/safe-url.pipe';
 import { StarsPipe }               from './pipes/stars.pipe';
 import { ScrollRevealDirective }   from './directives/scroll-reveal.directive';
 import { LazyImgDirective }        from './directives/lazy-img.directive';
+import { LUCIDE_ICONS }            from './lucide-icons';
 
 const DECLARATIONS = [
   NavbarComponent, FooterComponent, HeroBannerComponent, PageBannerComponent,
@@ -26,7 +27,7 @@ const DECLARATIONS = [
 
 @NgModule({
   declarations: DECLARATIONS,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
-  exports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ...DECLARATIONS],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ...LUCIDE_ICONS],
+  exports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, ...DECLARATIONS, ...LUCIDE_ICONS],
 })
 export class SharedModule {}

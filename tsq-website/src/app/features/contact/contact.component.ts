@@ -19,8 +19,8 @@ export class ContactComponent {
     { icon:'phone', label:'Phone', lines:['+255 763 983 920', '+255 745 695 215', '+255 693 124 340'] },
     { icon:'email', label:'Email', lines:['tanzaniasafariqueen@gmail.com'] },
     { icon:'location', label:'Location', lines:['Dar es Salaam, Tanzania'] },
-    { icon:'clock', label:'Office Hours', lines:['Mon–Fri: 8:00 AM – 6:00 PM', 'Sat–Sun: 9:00 AM – 4:00 PM'] },
-  ];
+    { icon:'clock', label:'Office Hours', lines:['Mon–Fri: 8:00 AM – 5:00 PM', 'Sat: 9:00 AM – 2:00 PM', 'Sun: Closed'] },
+  ]; // kept for reference; template uses dedicated markup
   faqs = [
     { q:'How do I book a tour?', a:'Browse our Tours page, select your preferred tour and click Book This Tour. Fill in the multi-step booking form and complete payment. You will receive a confirmation email within 24 hours.' },
     { q:'What payment methods do you accept?', a:'We accept M-Pesa (Vodacom), Airtel Money, credit/debit cards, and bank transfers. All payments are processed securely via Flutterwave.' },

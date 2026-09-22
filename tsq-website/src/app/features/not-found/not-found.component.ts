@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LucideHouse, LucideMountain } from '@lucide/angular';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, LucideHouse, LucideMountain],
   template: `
     <div class="nf">
       <div class="nf__bg">
@@ -17,8 +18,14 @@ import { RouterModule } from '@angular/router';
         <h2>Lost on the Savannah?</h2>
         <p>The page you're looking for has wandered off into the wilderness. Let us guide you back.</p>
         <div class="nf__actions">
-          <a routerLink="/"      class="btn btn--gold btn--lg">🏠 Go Home</a>
-          <a routerLink="/tours" class="btn btn--outline-white btn--lg">🗺️ Browse Tours</a>
+          <a routerLink="/" class="btn btn--gold btn--lg">
+            <svg lucideHouse [size]="18" [strokeWidth]="2" aria-hidden="true"></svg>
+            Go Home
+          </a>
+          <a routerLink="/tours" class="btn btn--outline-white btn--lg">
+            <svg lucideMountain [size]="18" [strokeWidth]="2" aria-hidden="true"></svg>
+            Browse Tours
+          </a>
         </div>
       </div>
     </div>`,

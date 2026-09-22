@@ -3,68 +3,104 @@
   title="Contact Us"
   subtitle="We'd love to hear from you - let's plan your next adventure"
   eyebrow="Get in Touch"
-  img="/assets/images/Globalnista®_ BlackGirlTravel _ Exclusive Group Travel Club for Black Women.jpeg">
+  img="/assets/images/African Savannah.jpeg">
 </app-page-banner>
 
 <section class="section section--ivory">
   <div class="container contact-layout">
 
-    <!-- Info side -->
     <div class="contact-info" [scrollReveal]="0">
       <span class="eyebrow">Reach Out</span>
       <h2>Let's Plan Your Crown Adventure</h2>
-      <p>Whether you have a question about a tour, want to organise a custom group trip, or simply want to say hello - our team is here for you.</p>
+      <p class="contact-lead">Whether you have a question about a tour, want to organise a custom group trip, or simply want to say hello - our team is here for you.</p>
 
-      <div class="contact-cards">
-        <div class="contact-card" [scrollReveal]="0">
-          <div class="contact-card__icon">Phone</div>
-          <div>
-            <strong>Phone</strong>
-            <a href="tel:+255763983920" class="contact-card__line">+255 763 983 920</a>
-            <a href="tel:+255745695215" class="contact-card__line">+255 745 695 215</a>
-            <a href="tel:+255693124340" class="contact-card__line">+255 693 124 340</a>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span class="contact-detail__icon" aria-hidden="true">
+            <svg lucidePhone [size]="20" [strokeWidth]="1.75"></svg>
+          </span>
+          <div class="contact-detail__body">
+            <h3>Phone</h3>
+            <a href="tel:+255763983920">+255 763 983 920</a>
+            <a href="tel:+255745695215">+255 745 695 215</a>
+            <a href="tel:+255693124340">+255 693 124 340</a>
           </div>
         </div>
-        <div class="contact-card" [scrollReveal]="80">
-          <div class="contact-card__icon">Email</div>
-          <div>
-            <strong>Email</strong>
-            <a href="mailto:tanzaniasafariqueen&#64;gmail.com" class="contact-card__line">tanzaniasafariqueen&#64;gmail.com</a>
+
+        <div class="contact-detail">
+          <span class="contact-detail__icon" aria-hidden="true">
+            <svg lucideMail [size]="20" [strokeWidth]="1.75"></svg>
+          </span>
+          <div class="contact-detail__body">
+            <h3>Email</h3>
+            <a href="mailto:tanzaniasafariqueen&#64;gmail.com">tanzaniasafariqueen&#64;gmail.com</a>
           </div>
         </div>
-        <div class="contact-card" [scrollReveal]="160">
-          <div class="contact-card__icon">Location</div>
-          <div>
-            <strong>Location</strong>
-            <span class="contact-card__line">Dar es Salaam, Tanzania</span>
-          </div>
-        </div>
-        <div class="contact-card" [scrollReveal]="240">
-          <div class="contact-card__icon">Hours</div>
-          <div>
-            <strong>Office Hours</strong>
-            <span class="contact-card__line">Mon–Fri: 8:00 AM – 6:00 PM</span>
-            <span class="contact-card__line">Sat–Sun: 9:00 AM – 4:00 PM</span>
+
+        <div class="contact-detail">
+          <span class="contact-detail__icon" aria-hidden="true">
+            <svg lucideMapPin [size]="20" [strokeWidth]="1.75"></svg>
+          </span>
+          <div class="contact-detail__body">
+            <h3>Location</h3>
+            <span>Dar es Salaam, Tanzania</span>
           </div>
         </div>
       </div>
 
-      <a href="https://wa.me/255763983920" target="_blank" class="btn btn--gold" style="margin-top:2rem">
-        Chat on WhatsApp
-      </a>
+      <div class="hours-panel">
+        <div class="hours-panel__head">
+          <span class="hours-panel__icon" aria-hidden="true">
+            <svg lucideClock [size]="18" [strokeWidth]="1.75"></svg>
+          </span>
+          <h3>Office Hours</h3>
+        </div>
+        <ul class="hours-list">
+          <li><span>Monday - Friday</span><span>8:00 AM - 5:00 PM</span></li>
+          <li><span>Saturday</span><span>9:00 AM - 2:00 PM</span></li>
+          <li class="hours-list__closed"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
 
-      <!-- African photo -->
-      <img src="/assets/images/654288652142854768.jpeg"
-           alt="Women connecting" loading="lazy" class="contact-photo" style="margin-top:2rem;border-radius:14px;box-shadow:0 12px 40px rgba(61,43,31,.15)"/>
+      <div class="connect-panel">
+        <h3>Connect With Us</h3>
+        <p>Chat directly, join our community group, or follow along on social.</p>
+        <div class="connect-actions">
+          <a href="https://wa.me/255763983920" target="_blank" rel="noopener noreferrer" class="btn btn--gold">
+            <svg lucideMessageCircle [size]="18" [strokeWidth]="2"></svg>
+            WhatsApp Chat
+          </a>
+          <a href="https://chat.whatsapp.com/Fxg0peIDnl8KeLLddGsbui" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+            <svg lucideUsers [size]="18" [strokeWidth]="2"></svg>
+            Join Group
+          </a>
+          <a href="https://www.facebook.com/tanzania.safari.queens/" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+            <svg lucideShare2 [size]="18" [strokeWidth]="2"></svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/tanzania__safari__queens/" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+            <svg lucideCamera [size]="18" [strokeWidth]="2"></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <figure class="contact-photo">
+        <img src="/assets/images/654288652142854768.jpeg"
+             alt="Women connecting on adventure" loading="lazy"/>
+      </figure>
     </div>
 
-    <!-- Form side -->
     <div class="contact-form-wrap" [scrollReveal]="100">
       <div class="alert alert--success" *ngIf="success">
         Message sent! We'll get back to you within 24 hours.
       </div>
       <form *ngIf="!success" [formGroup]="form" (ngSubmit)="submit()" class="contact-form">
-        <h3>Send a Message</h3>
+        <div class="contact-form__intro">
+          <span class="eyebrow">Enquiry</span>
+          <h3>Send a Message</h3>
+          <p>Tell us about your dream trip and we'll craft something unforgettable.</p>
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Full Name *</label>
@@ -81,13 +117,13 @@
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Phone <span style="color:#8A7060">(optional)</span></label>
+            <label class="form-label">Phone <span class="form-optional">(optional)</span></label>
             <input type="tel" formControlName="phone" class="form-control" placeholder="+255 7XX XXX XXX"/>
           </div>
           <div class="form-group">
             <label class="form-label">Subject *</label>
             <select formControlName="subject" class="form-control">
-              <option value="">Select a subject…</option>
+              <option value="">Select a subject...</option>
               <option *ngFor="let s of subjects" [value]="s">{{s}}</option>
             </select>
           </div>
@@ -96,7 +132,7 @@
           <label class="form-label">Message *</label>
           <textarea formControlName="message" class="form-control" rows="6"
             [class.is-invalid]="f('message')?.touched && f('message')?.invalid"
-            placeholder="Tell us about your dream trip, group size, preferred dates, or any questions…"></textarea>
+            placeholder="Tell us about your dream trip, group size, preferred dates, or any questions..."></textarea>
           <div class="form-error" *ngIf="f('message')?.touched && f('message')?.invalid">At least 20 characters</div>
         </div>
         <div class="alert alert--error" *ngIf="error">{{error}}</div>
@@ -108,16 +144,18 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="section section--parch">
-  <div class="container" style="max-width:800px">
+  <div class="container faq-wrap">
     <div class="text-center section-head" [scrollReveal]="0">
       <span class="eyebrow">FAQ</span>
       <h2>Frequently Asked Questions</h2>
     </div>
     <div class="faq-accordion">
       <details class="faq-item" *ngFor="let f of faqs">
-        <summary class="faq-item__q">{{f.q}}</summary>
+        <summary class="faq-item__q">
+          <span>{{f.q}}</span>
+          <svg lucideChevronDown class="faq-item__chevron" [size]="18" [strokeWidth]="2" aria-hidden="true"></svg>
+        </summary>
         <div class="faq-item__a">{{f.a}}</div>
       </details>
     </div>
